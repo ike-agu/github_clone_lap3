@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios'
 
 
 export const SearchForm = () => {
 
     const [userInput, setUserInput] = useState("")
-    const [username, setUserName] = useState("")
+    const [userName, setUserName] = useState("")
+    const [userRepo, setUserRepo] = useState([])
 
     const handleUserInput = (e) => {
         let input= e.target.value;
@@ -14,9 +16,26 @@ export const SearchForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setUserName(userInput);
-        console.log(username)
+        console.log(userName)
         setUserInput("")
     }
+
+    useEffect(() => {
+      const fetchGithubRepo = async () => {
+        try {
+          let {data} = await axios.get(` https://api.github.com/users/${userName}/repos`)
+          
+          setUserRepo(data)
+          console.log(data)
+        } catch (error) {
+          console.warn(error)
+        }
+      }
+      fetchGithubRepo()
+
+    }, [userName])
+
+
 
     return(
         <>
@@ -25,8 +44,8 @@ export const SearchForm = () => {
                 <input type="submit" value="Search!"></input>
             </form>
 
-            <p>{username}</p>
-        
+            {/* <p>{userRepo}</p> */}
+
         </>
     )
 };
