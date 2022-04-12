@@ -1,9 +1,11 @@
 import './App.css';
+import {Repositories} from './pages'
 
 function App() {
   return (
     <>
-    <h1> github clone</h1>
+    <h1>Welcome to Github Clone!</h1>
+    <Repositories/>
     </>
   );
 }
