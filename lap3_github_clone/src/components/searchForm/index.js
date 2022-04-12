@@ -24,9 +24,8 @@ export const SearchForm = () => {
       const fetchGithubRepo = async () => {
         try {
           let {data} = await axios.get(` https://api.github.com/users/${userName}/repos`)
-          
-          setUserRepo(data)
-          console.log(data)
+          let repoList = data.map(d => d.name)
+          setUserRepo(repoList)
         } catch (error) {
           console.warn(error)
         }
@@ -44,7 +43,15 @@ export const SearchForm = () => {
                 <input type="submit" value="Search!"></input>
             </form>
 
-            {/* <p>{userRepo}</p> */}
+            <ul>
+              {
+              userRepo.map(repo => (
+                <li>
+                  {repo}
+                </li>
+              ))
+              }
+            </ul>
 
         </>
     )
