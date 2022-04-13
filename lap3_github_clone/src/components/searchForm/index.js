@@ -5,6 +5,8 @@ import axios from 'axios'
 
 export const SearchForm = () => {
 
+  const navigateTo = useNavigate()
+
     const [userInput, setUserInput] = useState("")
     const [userName, setUserName] = useState("")
     const [userRepo, setUserRepo] = useState([])
@@ -48,7 +50,7 @@ export const SearchForm = () => {
             <ul>
               {
               userRepo.map((repo) => (
-                <li key={repo} onClick={}>
+                <li key={repo} onClick={()=> navigateTo(`/${repo}`)}>
                    {repo}
                 </li>
               ))
