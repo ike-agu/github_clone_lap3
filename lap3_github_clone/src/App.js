@@ -5,8 +5,11 @@ import {Routes, Route} from 'react-router-dom';
 function App() {
   return (
     <Routes>
-    {/* <h1>Welcome to Github Clone!</h1>
-    <Repositories /> */}
+      <Route path="/" element={<Repositories /> }>
+        {/* <Route path=":repo" element={</>} /> */}
+
+      </Route>
+
     </Routes>
   );
 }

@@ -28,8 +28,8 @@ export const SearchForm = () => {
         try {
           let {data} = await axios.get(` https://api.github.com/users/${userName}/repos`)
           console.log(data)
-          let repoList = data.map(d => d.name)
-          setUserRepo(repoList)
+          // let repoList = data.map(d => d.name)
+          setUserRepo(data)
         } catch (error) {
           console.warn(error)
         }
@@ -50,8 +50,8 @@ export const SearchForm = () => {
             <ul>
               {
               userRepo.map((repo) => (
-                <li key={repo} onClick={()=> navigateTo(`/${repo}`)}>
-                   {repo}
+                <li key={repo.id} onClick={()=> navigateTo(`/${repo.name}`)}>
+                   {repo.name}
                 </li>
               ))
               }
