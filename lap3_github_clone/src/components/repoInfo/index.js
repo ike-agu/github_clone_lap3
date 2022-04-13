@@ -15,9 +15,9 @@ export const RepoInfo = () => {
   return(
     <>
         <h1>Here is some info about your Repo {chosenRepo[0].name}:</h1>
-        <p>Your Repo ID: {chosenRepo[0].id}</p>
-        <p>The number of times your Repo has been forked: {chosenRepo[0].forks_count}</p>
-        <p>Your Repo was last updated at: {chosenRepo[0].updated_at}</p>
+        <p><strong>{chosenRepo[0].name}</strong> Repo ID: {chosenRepo[0].id}</p>
+        <p>The number of times <strong>{chosenRepo[0].name}</strong> Repo has been forked: {chosenRepo[0].forks_count} </p>
+        <p><strong>{chosenRepo[0].name}</strong> repo was last updated at: {chosenRepo[0].updated_at}</p>
 
     </>
   )
