@@ -1,6 +1,5 @@
 import React from 'react';
 import { SearchForm } from '../../components';
-// import { Outlet } from 'react-router-dom';
 
 export const Repositories = () => {
 
@@ -10,9 +9,6 @@ export const Repositories = () => {
             <p>Search your Repositories here:</p>
             <SearchForm/>
 
-            {/* <aside>
-                <Outlet/>
-            </aside> */}
         </>
     )
 }

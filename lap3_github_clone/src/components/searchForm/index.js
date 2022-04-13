@@ -39,8 +39,6 @@ export const SearchForm = () => {
         setUserInput("")
     }
 
-
-
     return(
         <>
             <form onSubmit={handleSubmit}>
