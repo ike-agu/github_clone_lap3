@@ -1,0 +1,28 @@
+#searchBar {
+    border-radius: 5px;
+    border-width: 1px;
+    width: 300px;
+    margin: 5px;
+    padding: 10px 0 10px 2px;
+}
+
+#searchBtn {
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 10px 5px;
+    margin: 0 10px;
+}
+
+#searchBtn:hover {
+    background-color: rgb(104, 104, 238);
+}
+
+#repoList{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#listItem {
+    padding: 5px 0;
+}

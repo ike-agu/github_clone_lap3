@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios';
 import { Outlet } from 'react-router-dom';
+import './style.css'
 
 
 export const SearchForm = () => {
@@ -42,23 +43,24 @@ export const SearchForm = () => {
     return(
         <>
             <form onSubmit={handleSubmit}>
-                <input type='text' value={userInput} onChange={handleUserInput}></input>
-                <input type="submit" value="Search!"></input>
+                <input type='text' id='searchBar' placeholder='Your GitHub username' value={userInput} onChange={handleUserInput}></input>
+                <input id="searchBtn" type="submit" value="Search!"></input>
             </form>
 
-            <ul>
+            <aside>
+                <Outlet context={[userRepo, setUserRepo]}/>
+            </aside>
+
+            <ul id="repoList">
               {
               userRepo.map((repo) => (
-                <li key={repo.id} onClick={()=> navigateTo(`/${repo.name}`)}>
+                <li id="listItem" key={repo.id} onClick={()=> navigateTo(`/${repo.name}`)}>
                    {repo.name}
                 </li>
               ))
               }
             </ul>
 
-            <aside>
-                <Outlet context={[userRepo, setUserRepo]}/>
-            </aside>
 
         </>
     )
