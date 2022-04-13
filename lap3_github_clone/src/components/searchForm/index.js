@@ -30,7 +30,7 @@ export const SearchForm = () => {
                 }
               }
             fetchGithubRepo()
-    
+
         }, [userName])
 
     const handleSubmit = (e) => {
@@ -42,6 +42,8 @@ export const SearchForm = () => {
 
     return(
         <>
+
+
             <form onSubmit={handleSubmit}>
                 <input type='text' id='searchBar' placeholder='Your GitHub username' value={userInput} onChange={handleUserInput}></input>
                 <input id="searchBtn" type="submit" value="Search!"></input>
@@ -51,6 +53,9 @@ export const SearchForm = () => {
                 <Outlet context={[userRepo, setUserRepo]}/>
             </aside>
 
+
+             <div className='repoList-div'>
+               <h3>list of repos </h3>
             <ul id="repoList">
               {
               userRepo.map((repo) => (
@@ -60,6 +65,7 @@ export const SearchForm = () => {
               ))
               }
             </ul>
+            </div>
 
 
         </>

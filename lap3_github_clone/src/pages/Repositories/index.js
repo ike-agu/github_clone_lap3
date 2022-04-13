@@ -4,8 +4,8 @@ import './style.css'
 
 export const Repositories = () => {
 
-    return( 
-        <main>
+    return(
+        <main className='container'>
             <h1 id="title">Your GitHub Repositories</h1>
             <div id="search">
                 <p>Search your Repositories here:</p>
