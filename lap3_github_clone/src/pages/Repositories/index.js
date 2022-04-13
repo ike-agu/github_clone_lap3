@@ -1,10 +1,12 @@
 import React from 'react';
 import { SearchForm } from '../../components';
+import {Footer} from '../Footer'
 import './style.css'
 
 export const Repositories = () => {
 
     return(
+      <>
         <main className='container'>
             <h1 id="title">Your GitHub Repositories</h1>
             <div id="search">
@@ -12,5 +14,7 @@ export const Repositories = () => {
                 <SearchForm/>
             </div>
         </main>
+        <Footer />
+      </>
     )
 }
