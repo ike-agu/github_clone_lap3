@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -47,7 +48,7 @@ export const SearchForm = () => {
             <ul>
               {
               userRepo.map((repo) => (
-                <li key={repo}>
+                <li key={repo} onClick={}>
                    {repo}
                 </li>
               ))
