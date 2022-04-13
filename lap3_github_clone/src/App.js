@@ -1,12 +1,17 @@
 import './App.css';
-import {Repositories} from './pages'
+import {Repositories} from './pages';
+import { RepoInfo } from './components';
+import {Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <>
-    <h1>Welcome to Github Clone!</h1>
-    <Repositories/>
-    </>
+    <Routes>
+      <Route path="/" element={<Repositories /> }>
+        <Route path=":repo" element={<RepoInfo/>} />
+
+      </Route>
+
+    </Routes>
   );
 }
 
